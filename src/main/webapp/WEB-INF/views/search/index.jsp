@@ -97,12 +97,14 @@
 </script>
 
 <style type="text/css">
+
 html{
 	font-size: 16px;
 }
 form{
 	height: 100%;
 }
+
 .filterBoxContainer{
 	box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px !important;
 	position: relative;
@@ -192,8 +194,113 @@ i{
 
 body {
 color:#484848;
+ width: 100%;
+ height: 100%;
+ 
 }
 
+/* 반응형  */
+@media screen and (max-width:1500px){
+	#divGuestHouse {
+		height: 75rem;
+	}
+	#divGuestHouse > #ch{
+		width: 45rem;
+		height: auto;
+		margin: 0 auto;
+	}
+	#demo0, #demo1, #demo2, #demo3{
+		margin-top: 7rem;
+	}
+	#jeju{
+		padding-top: 3rem;
+	}
+	#centerJeju{
+		width: 41rem;
+		margin: auto;
+	}
+	#centerTop{
+		margin-top:3rem; 
+		margin-bottom: 3rem;
+	}
+	#displayNone{
+		display: none;
+	}
+	#centerText{
+		font-weight: bold;
+		width: 35rem;
+		display: inline-block;
+		margin: 3rem auto;
+		margin-left: 5rem;
+	}
+	#divExper{
+		margin-top: 10rem; 
+		height: 75rem; 
+		margin-bottom: 5rem;
+	}
+	#divExper > #ch{
+		width: 45rem; 
+		height: auto; 
+		margin: 0 auto
+	}
+	#exDemo0, #exDemo1, #exDemo2, #exDemo3{
+		 margin-top: 7rem;
+	}
+}
+
+/*  전체화면 */
+@media screen and (min-width:1500px){
+
+	#divGuestHouse{
+		height: 44rem;
+	}
+	#divGuestHouse > #ch{
+			width: 90rem;
+			height: auto;
+			margin: 0 auto;
+			/*  style="width: 90rem; height: 40rem; margin: 0 auto;"  */
+		}
+		
+	#demo0, #demo1, #demo2, #demo3{
+		margin-top: 5rem;
+		}
+	#centerJeju{
+		width: 90rem;
+		margin: auto;
+	}
+	#centerTop{
+		height: 20rem; 
+		margin-top:10rem; 
+		margin-bottom: 30rem;
+	}
+	#displayNone{
+		display: inline-block;
+		margin-top: 2.8rem;
+		margin-left: 2rem;
+		width: 48rem;
+		height: 15rem;
+	}
+	#centerText{
+		font-weight: bold;
+		width: 35rem;
+		display: inline-block;
+		margin-top: 12rem;
+		margin-left: 3rem;
+	}
+	#divExper{
+		margin-top: 10rem; 
+		height: 44rem; 
+		margin-bottom: 5rem;
+	}
+	#divExper > #ch{
+		width: 90rem; 
+		height: 41rem; 
+		margin: 0 auto
+	}
+	#exDemo0, #exDemo1, #exDemo2, #exDemo3{
+		 margin-top: 5rem;
+	}
+}
 /* .btn-primary{
     background-color: #7bc143;
     border-color: #7bc143;
@@ -291,16 +398,16 @@ color:#484848;
 	</div>
 
 	
-	<div style="background: url(http://fiximage.10x10.co.kr/web2018/main/bg_pattern_slash.png) 0 0 repeat;    height: 44rem;">
-		<div style="width: 90rem; height: 40rem; margin: 0 auto;"  >
+	<div style="background: url(http://fiximage.10x10.co.kr/web2018/main/bg_pattern_slash.png) 0 0 repeat;" id="divGuestHouse">
+		<div id="ch" >
 			<div align="center">
-				<div style="width: 100%; height: 10rem; line-height: 10rem; font-size: 3rem; margin-top: 10rem; font-weight: bold;">JEJU GUEST HOUSE</div>
+				<div id ="jeju" style="width: 100%; height: 10rem; line-height: 10rem; font-size: 3rem; margin-top: 10rem; font-weight: bold;">JEJU GUEST HOUSE</div>
 
 			</div>
 			
 			<c:forEach var="ho" items="${houseImgDto}" varStatus="i">
 	
-				<div id="demo${i.index}" class="carousel slide" data-ride="carousel" style="width: 20rem; height: 20rem; float: left; margin-left: 2rem; margin-top: 5rem;">
+				<div id="demo${i.index}" class="carousel slide" data-ride="carousel" style="width: 20rem; height: 20rem; float: left; margin-left: 2rem;">
 			
 					
 					 <a href="${root}/guestHousePage/guestHouse.do?houseCode=${ho.houseCode}" style="display: block;"/>
@@ -380,8 +487,8 @@ color:#484848;
 
 
 	
-	<div style="background-color: #FBD65C; height: 20rem; margin-top:10rem; margin-bottom: 30rem;">
-		<div style="width: 90rem; margin: auto;">
+	<div id="centerTop" style="background-color: #FBD65C;">
+		<div id="centerJeju">
 			<div style="display: inline-block; margin-top: 4rem; float: left;">
 			<a href="${root}/experience?checkIn=&checkOut=&local=&people=1&searchExName=">
 				<img style="width: 40rem; height: 32rem;"
@@ -389,14 +496,14 @@ color:#484848;
 			</a>
 			
 			</div>
-			<div style="font-weight: bold;width: 35rem;display:  inline-block;margin-top: 12rem;margin-left: 3rem;">
+			<div id="centerText" >
 					<div style="font-size: 2.5rem; margin-bottom: 1rem;">제주시의 매력을 만나세요!</div>
 					<div style="font-size: 1rem; color: orangered;">
 						호스트와 함께하는 체험을 예약하고
 						제주의 새로운 모습을 발견하세요!
 					</div>
 			</div>
-			<div style="/* border:  1px solid; */display: inline-block;margin-top: 2.8rem;margin-left: 2rem;width: 48rem;height: 15rem;">
+			<div id = "displayNone">
 				<div style="/* border: 1px solid red; */float: left;width: 15.2rem;height: 15rem;/* margin-top: auto; *//* display:  inline-block; */">
 					<a href="${root}/experience?checkIn=&checkOut=&local=&people=1&searchExName=">
 						<img style="width: 100%; height: 100%;" src="${root}/resources/images/1.jpg" alt="img">
@@ -420,15 +527,15 @@ color:#484848;
 		</div>
 	</div>
 	
-	<div style="background: url(http://fiximage.10x10.co.kr/web2018/main/bg_pattern_slash.png) 0 0 repeat;  margin-top: 10rem; height: 44rem; margin-bottom: 5rem;">
-		<div style="width: 90rem; height: 41rem; margin: 0 auto;"  >
+	<div style="background: url(http://fiximage.10x10.co.kr/web2018/main/bg_pattern_slash.png) 0 0 repeat; " id="divExper">
+		<div id="ch">
 		<div align="center">
-			<div style="width: 100%; height: 10rem; line-height: 10rem; font-size: 3rem; margin-top: 10rem; font-weight: bold;">JEJU EXPERIENCE</div>
+			<div id="jeju" style="width: 100%; height: 10rem; line-height: 10rem; font-size: 3rem; margin-top: 10rem; font-weight: bold;">JEJU EXPERIENCE</div>
 		</div>
 
 		<c:forEach var="ex" items="${experienceImgDto}" varStatus="i">
 
-			<div id="exDemo${i.index}" class="carousel slide" data-ride="carousel" style="width: 20rem; height: 20rem; float: left; margin-left: 2rem; margin-top: 5rem;">
+			<div id="exDemo${i.index}" class="carousel slide" data-ride="carousel" style="width: 20rem; height: 20rem; float: left; margin-left: 2rem;">
 				
 				<a href="${root}/experience/exPage.do?exCode=${ex.exCode}" style="display: block;"/>
 				  <!-- Indicators -->

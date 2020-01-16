@@ -67,7 +67,58 @@ color:#484848;
 font-family: 'Nanum Gothic', sans-serif !important;
 }
 
+/* 반응형 웹  */
+@media screen and (max-width:1500px){
+	.nav{
+		display: none;
+	}
+	
+	#toggle:checked + .nav{
+		display:block;
+		margin-top: 28rem;
+		width: 15rem;
+		background-color: #eeeeee;
+	}
+	
+	#toggle{
+		display: none;
+	}
+	
+	.nav li{
+		display: block;
+		width: 100%;
+		text-align: center;
+		/* background-position: 97% 10px; */
+		padding: 4px;	
+		font-weight: bold;
+		
+	}
+	#Icon{
+		position:absolute;
+		right: 13rem;
+		bottom:1.5rem;
+		display: block;
+		text-align: right;
+		background-repeat: no-repeat;
+		background-image: url("https://image.flaticon.com/icons/svg/747/747991.svg");
+		background-position: right;
+		background-size: 3rem 3rem;
+		font-size: 20px;
+		font-weight: bold;
+		padding: 4px 3%;
+		width: 3rem;
+		height: 3rem;
+		
+	}
+	
+}
 
+/* 전체화면 */
+@media screen and (min-width:1500px){
+	#Icon, #toggle{
+		display: none;
+	}
+}
 </style>
 
 </head>
@@ -128,6 +179,10 @@ font-family: 'Nanum Gothic', sans-serif !important;
 
           <span><i class="ion-navicon"></i></span>
         </button> -->
+        <div align="right" class="nav1 navbar-nav navbar-right">
+        	<label id="Icon" for = "toggle" ><!-- &#8801; --></label>
+        </div>
+        <input type="checkbox" id="toggle"/>
         
          <ul class="nav navbar-nav navbar-right" style="margin-right: 5rem;">
           	
