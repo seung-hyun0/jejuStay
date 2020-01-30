@@ -588,38 +588,23 @@
 .checkInOutContainer label{
 	font-size: 1.25rem
 }
-.filterBox{
-	margin-top:0.938rem;
-	margin-bottom:0.938rem;
-	width:52.5rem;
-	height: 10.063rem;
-}
-.formContainer{
-	height: 4.688rem;
-    width: 52.5rem;
-    background-color: white;
-    position: fixed;
-    z-index: 10;
-    top: 11.638rem;
-    border-bottom: solid 0.1rem #cccccc;
-}
+
+
 .filterContainer :first-child{
 	margin-left:0.938rem;
 	margin-top: 0.931rem;
     margin-bottom: 0.931rem;
 }
-.filterContainer{
+
+/* .filterContainer{
 	background-color:white;
 	width:52.5rem;
  	position: fixed;
 	z-index: 10;
 	top: 6.8rem;
-}
+} */
 
-.houseListContainer{
-/* 	background-color: #bbccaa; */
-	width: 52.5rem;
-}
+
 .houseListCount{
 /* 	background-color: #aabbcc; */
 	padding-left: 1.313rem;
@@ -720,27 +705,14 @@
     top: 0.4rem;
     left: 0.35rem;
 }
-.emptyContainer{
-    margin-top: 0.938rem;
-	width:1903px;
-}
-.sortContainer{
-/* 	width:51.5rem; */
-	display:inline-block;
-	text-align: right;
-    float: right;
-    margin-right: 1rem;
-    margin-top: 0.931rem;
-}
+
+
 }
 body{
 	position: absolute;
 	top: 9rem;
 }
-.buttonContainer{
-	display: inline-block;
-    margin: 0rem !important;
-}
+
 form{
 	position: relative;
 	margin-left: 1.876rem;
@@ -766,6 +738,101 @@ form{
 	margin: 0rem !important;
 }
 
+/* 반응형  */
+@media screen and (max-width:1500px){
+	.filterContainer{
+		background-color:white;
+		width:57%;
+		position: relative;
+		z-index: 10;
+	}
+	
+	.formContainer{
+		height: 4.688rem;
+	    width: 57%;
+	    background-color: white;
+	    position: relative;
+	    z-index: 10;
+	    border-bottom: solid 0.1rem #cccccc;
+	}
+	.emptyContainer{
+	   /*  margin-top: 0.938rem; */
+	   margin: 0 auto;
+		
+	}
+	.sortContainer{
+		width:100%;
+		display:inline-block;
+		text-align: center;
+	}
+	.filterBox{
+		margin-top:0.938rem;
+		margin-bottom:5.938rem;
+		width:100%;
+		height: auto;
+	}
+	.buttonContainer{
+		display: inline-block;
+	    margin: 0rem !important;
+	    width: 100%;
+	    text-align: center;
+	    
+	}
+	.houseListContainer{
+	/* 	background-color: #bbccaa; */
+		width: 67%;
+	}
+
+}
+/*  전체화면 */
+@media screen and (min-width:1500px){
+
+	.filterContainer{
+		background-color:white;
+		width:52.5rem;
+	 	position: fixed;
+		z-index: 10;
+		top: 6.8rem;
+	}
+	
+	.formContainer{
+		height: 4.688rem;
+	    width: 52.5rem;
+	    background-color: white;
+	    position: fixed;
+	    z-index: 10;
+	    top: 11.638rem;
+	    border-bottom: solid 0.1rem #cccccc;
+	}
+	.emptyContainer{
+	    margin-top: 0.938rem;
+		width:1903px;
+	}
+	.sortContainer{
+	/* 	width:51.5rem; */
+		display:inline-block;
+		text-align: right;
+	    float: right;
+	    margin-right: 1rem;
+	    margin-top: 0.931rem;
+	}
+	.filterBox{
+		margin-top:0.938rem;
+		margin-bottom:0.938rem;
+		width:52.5rem;
+		height: 10.063rem;
+	}
+	.buttonContainer{
+		display: inline-block;
+	    margin: 0rem !important;
+	}
+	.houseListContainer{
+	/* 	background-color: #bbccaa; */
+		width: 52.5rem;
+	}
+}
+
+
 </style>
 
 </head>
@@ -775,6 +842,7 @@ form{
 		<div class="filterBox">
 			<div class="emptyContainer">
 				<div class="filterContainer">
+       				 
 					<div class="buttonContainer">
 						<div class="filterButton"><button class="dateButton btn btn-outline-primary" type="button"><span class="_checkInSpan">${checkIn}</span> ~ <span class="_checkOutSpan">${checkOut}</span></button></div>
 						<div class="filterButton"><button class="peopleButton btn btn-outline-primary" type="button">인원 ${people}명</button></div>

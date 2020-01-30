@@ -119,7 +119,7 @@ float: left;
 margin-right: 3rem; 
 margin-bottom: 3rem;
 /* border: 0.1rem solid purple; */
-width: 10rem;
+width: 19%;
 height: auto;
 
 }
@@ -146,6 +146,182 @@ font-weight: bold;
 li{
 list-style: none;
 }
+
+/* 반응형  */
+@media screen and (max-width:1500px){
+	#mainImage{
+		float:left; 
+		width: 100%;
+		height: 27.42rem; 
+		overflow: hidden;  
+		margin-right: 0.5rem;
+	}
+	#exImages{
+		display: none;	
+	}
+	#allImages{
+		width: 95%; 
+	}
+	#exinfo{
+		margin-left: 2rem;
+		margin-top: 3.125rem;
+		margin-bottom:3rem; 
+		width: 94%;
+		height: auto;
+		border: 0.01rem solid #ffc0cb5c; 
+		float: left;
+	}
+	.wrap{
+		width: 100%;
+	}
+	#reservationDate{
+		display: none;
+	}
+	#reservation{
+	    height: 26rem;
+	    margin-top: 2rem; 
+	    margin-bottom: 10rem;
+	}
+	#reservation > form{
+		margin: 0 auto;
+	}
+	#allReserve{
+		width:74%;
+		height:22rem;  
+		border: 0.1rem solid #e4e4e4; 
+		margin-top: 3.5rem;
+	}
+	#reviews{
+		width: 100%; 
+		height: auto; 
+	}
+	#contentData{
+		width: 100%; 
+		height: auto;
+	}
+	#listReview{
+		margin-left: 10rem; 
+		margin-top: 3rem;
+	}
+	#hostInfo{
+		width: 100%; 
+		height:auto;
+		margin-top: 3rem; 
+		padding-top: 3rem; 
+		margin-bottom: 5rem;
+	}
+	#hostInfoUl{
+		width: 70%; 
+		height: auto; 
+		margin-left: 25%;
+	}
+	#regDate{
+	 	margin-bottom: 3rem;
+	 }
+	#memberInfoAll{
+	 	margin-left: 10rem; 
+	 	text-align: left; 
+	 	height: auto; 
+	 	word-break: break-all; 
+	 }
+	#mapAll{
+	  	margin-top: 3rem; 
+	  	margin-bottom: 5rem;
+	  }
+	#exMap{
+	   width: 66%;
+	   height: 30rem; 
+	   margin-left: 15rem;
+	  }
+}
+
+/*  전체화면 */
+@media screen and (min-width:1500px){
+	#mainImage{
+		float:left; 
+		width: 20rem;
+		height: 27.42rem; 
+		overflow: hidden;  
+		margin-right: 0.5rem;
+	}
+	#allImages{
+		width: 78rem; 
+		margin-left: 1rem;
+	}
+	.wrap{
+		margin:0px auto; 
+		width: 80rem;
+	}
+	#exInfo{
+		margin-left: 2rem;
+		margin-top: 3.125rem;
+		margin-bottom:3rem; 
+		width: 76rem; 
+		height: auto;
+		border: 0.01rem solid #ffc0cb5c; 
+		float: left;
+	}
+	#reservation{
+		width: 40rem;
+	    height: 26rem;
+	    margin-left: 35rem; 
+	    margin-top: 2rem; 
+	    margin-bottom: 10rem;
+	}
+	#allReserve{
+		width:30rem;
+		height:22rem;  
+		border: 0.1rem solid #e4e4e4; 
+		margin-top: 3.5rem;
+	}
+	#reviews{
+		width: 70rem; 
+		height: auto; 
+		margin: 4rem;
+	}
+	#contentData{
+		width: 55rem; 
+		height: auto;
+	}
+	#listReview{
+		width: 55rem; 
+		margin-left: 10rem; 
+		margin-top: 3rem;
+	}
+	#hostInfo{
+		width: 70rem; 
+		height:auto;
+		margin-top: 3rem; 
+		padding-top: 3rem; 
+		margin-bottom: 5rem;
+	}
+	#hostInfoUl{
+		width: 45rem; 
+		height: auto; 
+		margin-left: 25rem;
+	}
+	#regDate{
+	 	width: 45rem; 
+	 	margin-bottom: 3rem;
+	 }
+	 #memberInfoAll{
+	 	width: 25rem; 
+	 	margin-left: 10rem; 
+	 	text-align: left; 
+	 	height: auto; 
+	 	word-break: break-all; 
+	 }
+	 #mapAll{
+	  	width: 70rem; 
+	  	margin-top: 3rem; 
+	  	margin-bottom: 5rem;
+	  }
+	  #exMap{
+	   width: 40rem;
+	   height: 30rem; 
+	   margin-left: 15rem;
+	  }
+}
 </style>
 
 
@@ -163,15 +339,14 @@ list-style: none;
 	
 		<!-- 이미지 -->	
 		<div style="width:100%; height: 35rem; background-color: black; padding-top: 3.5rem;">
-			<div align="center" style="width: 78rem; /* border: 0.1rem dotted pink; */ margin-left: 1rem;">
+			<div id="allImages" align="center" >
 	         	<div class="img" style="overflow: hidden;">
 		         		<c:forEach var="exFileDto" items="${exFileList}">
 		         			
 		         			<!-- 사진은 최소 5개  -->
 			         		<c:if test="${exFileDto.mainImgName!=null}">
 	         		
-			         			
-			         			<div style="float:left; width: 20rem; height: 27.42rem; overflow: hidden;  margin-right: 0.5rem;">
+			         			<div id="mainImage" >
 			         				<img id="exImg" style="width: 100%; height: 100%;/* position:static !important; top:0rem !important; right:0rem !important; left:0rem !important; bottom:0rem !important; object-fit:cover; */" alt="img loading" src="<spring:url value='/exImage/${exFileDto.mainImgName}' />"/>
 			         			</div>
 			         	
@@ -182,14 +357,14 @@ list-style: none;
 				         	<c:if test="${exFileDto2.mainImgName eq null}">
 				         			
 				         		<c:if test="${list.index < 3 and list.index > 0}">
-					         		<div style="float:left; width: 20rem; height: 27.42rem; overflow: hidden; /* border: 0.01rem solid blue; */ margin-right: 0.5rem;">
+					         		<div id="exImages" style="float:left; width: 20rem; height: 27.42rem; overflow: hidden; /* border: 0.01rem solid blue; */ margin-right: 0.5rem;">
 					         			<img id="exImg" alt="img loading" src="<spring:url value='/exImage/${exFileDto2.fileName}' />"/>
 					         		</div>
 				         		</c:if>
 				         		
 				         		<!--  exFileList.size() > 3-->
 				         		<c:if test="${list.index >=3}">
-				         			<div style="float:left; width: 15rem; height: 13.5rem; margin-bottom:0.3rem; overflow: hidden; /* border: 0.01rem solid blue; */ margin-right: 0.5rem;">
+				         			<div id="exImages" style="float:left; width: 15rem; height: 13.5rem; margin-bottom:0.3rem; overflow: hidden; /* border: 0.01rem solid blue; */ margin-right: 0.5rem;">
 					         			<img id="exImg" alt="img loading" src="<spring:url value='/exImage/${exFileDto2.fileName}' />"/>
 					         		</div>
 		         				</c:if>
@@ -201,8 +376,8 @@ list-style: none;
 		</div>
 	     
 		<!-- 체험정보 -->	
-		<div class="wrap" style="margin:0px auto; width: 80rem; /* border: 1px dotted black;  */">
-			<div id="exinfo" style="margin-left: 2rem; margin-top: 3.125rem; margin-bottom:3rem; width: 76rem; height: auto; border: 0.01rem solid #ffc0cb5c; float: left;">
+		<div class="wrap" >
+			<div id="exinfo">
 			 <ul style="width: 20rem; height:20rem; /* border: 0.1rem dotted orange; */ float: left; margin-right: 3rem;" > 
 		         <li style="width: 16rem; height: auto;">
 		            <label style="display: block;">체험이름</label>
@@ -259,9 +434,9 @@ list-style: none;
 		        </li> --%>
 		    	
 		        
-		         <li style="width: 49rem; height: auto; ">
+		         <li style="width: 100%; height: auto; ">
 		         	<label>프로그램 설명</label>
-		         	<div class="text-secondary" style="width: 48rem; height: auto; word-break:break-all;text-align: left;">${experienceDto.exExplain}</div>
+		         	<div class="text-secondary" style="width: 86%; height: auto; word-break:break-all;text-align: left;">${experienceDto.exExplain}</div>
 		    		<input type="hidden" name="exExplain" id="exExplain" value="${experienceDto.exExplain}"/>
 		    		
 		         </li>
@@ -272,7 +447,7 @@ list-style: none;
 			
 			<!-- 달력 -->	
 			<div style="width: 100%; height: 30rem; border-top: 0.2rem solid #ebebeb;border-bottom: 0.2rem solid #ebebeb; margin-top: 5rem;">
-				<div style="width: 25rem; height: 25rem; /* border: 0.1rem dotted black;  */float: left; margin-left: 5rem;margin-top: 2rem;">	         
+				<div id="reservationDate" style="width: 25rem; height: 25rem; /* border: 0.1rem dotted black;  */float: left; margin-left: 5rem;margin-top: 2rem;">	         
 			      <div style="width: 20rem; height: auto;">
 			       	<label style="margin-top: 2rem; font-weight: bold; font-size: 1.5rem;">예약가능날짜</label>
 			        <div type="text" id="date" name="date" style="margin-top: 3rem;"></div>
@@ -326,9 +501,9 @@ list-style: none;
 				</div>
 				
 				<!-- 예약하기 -->
-				<div style="width: 40rem; height: 26rem; /* border: 0.1rem dotted black; */ margin-left: 35rem; margin-top: 2rem; margin-bottom: 10rem;">
+				<div id="reservation" >
 					<form action="${root}/experience/exReserve.do"  method="get" name="exForm" onsubmit="return onExReserve(exForm)">
-						<div style="width:30rem; height:22rem;  border: 0.1rem solid #e4e4e4; margin-top: 3.5rem;">
+						<div id="allReserve">
 						
 							<p style="width: 20rem; margin-bottom: 4rem; margin-top: 1rem; font-weight: bold; font-size: 1.5rem;">예약하기</p>
 							
@@ -408,7 +583,7 @@ list-style: none;
 			</div>
 			
 			<!-- 후기 전체 -->
-			<div style="width: 70rem; height: auto; /* border: 0.1rem dotted orange; */ margin: 4rem;">
+			<div id="reviews">
 				<div style="width: 10rem; height: 10rem; /* border: 0.1rem solid skyblue; */ float: left; line-height: 7rem;">
 					<div style="/* margin-top: 5rem; */ height: 4rem; font-weight: bold; font-size: 1.5rem; line-height: 2rem;">게스트 후기</div>
 				
@@ -499,9 +674,9 @@ list-style: none;
 				</c:if>
 				
 				<!-- 리스트 뿌리기 -->
-				<div style="width: 55rem; /* border: 0.1rem dotted green;  */margin-left: 10rem; margin-top: 3rem;">
+				<div id="listReview">
 					
-					<div id="contentData" style="width: 55rem; height: auto;">
+					<div id="contentData">
 						<!-- <p id="exReserveCode"></p>
 						<p id="emailJ"></p>
 						<p id="revDateJ"></p>
@@ -516,7 +691,7 @@ list-style: none;
 			</div>
 			<!-- 호스트 정보 -->	
 			<div style="width: 100%; height: auto; border-top: 0.2rem solid #ebebeb; border-bottom: 0.2rem solid #ebebeb; padding-bottom: 3rem;" onclick="location.href='${root}/guestdelluna/myInfo.do?memberCode=${memberDto.memberCode}'">
-				<div style="width: 70rem; height:auto; /* border: 0.1rem solid black; */ margin-top: 3rem; padding-top: 3rem; margin-bottom: 5rem;">
+				<div id="hostInfo">
 					<ul style="width: 15rem; height:auto; float: left; /* border: 0.1rem solid black; */">
 						
 				        <li style="list-style: none; float: left;">
@@ -527,13 +702,13 @@ list-style: none;
 				        </li>
 				     </ul>
 				     
-				     <ul style="width: 45rem; height: auto; margin-left: 25rem;/*  border: 0.1rem dotted #06ff00; */">  
+				     <ul id="hostInfoUl">  
 					     <li style="list-style: none; margin-bottom: 3rem;" >	
 					        <label style="width: 8rem; float: left;/*  border: 0.1rem solid #ff00f3; */ margin: 0 auto;">호스트</label>
 					        <p class="text-secondary" style="width:15rem;/*  border: 0.1rem solid green; */text-align: left;">${memberDto.memberName}</p>
 					        <input type="hidden" name="memberName" id="memberName" value="${memberDto.memberName}">
 					     </li>
-					     <li style="width: 45rem; margin-bottom: 3rem;">	
+					     <li id="regDate">	
 					        <label style="width: 10rem; float: left; margin: 0 auto;">회원가입 날짜</label>
 					        <fmt:formatDate var="regDate" pattern="yyyy년 MM월 dd일" value="${memberDto.regDate}"/>
 					    	<p class="text-secondary" style="width: 18rem; text-align: left;">${regDate}</p>
@@ -541,17 +716,17 @@ list-style: none;
 					     </li>
 					     <li style="margin-bottom: 3rem;">	
 					        <label style="width: 8rem; float: left; margin: 0 auto;">소개</label>
-					        <p class="text-secondary" style="width: 25rem; margin-left: 10rem; text-align: left; height: auto; word-break: break-all; ">${memberDto.memberInfo}</p>
+					        <p class="text-secondary" id="memberInfoAll">${memberDto.memberInfo}</p>
 					        <input type="hidden" name="memberInfo" id="memberInfo" value="${memberDto.memberInfo}">
 					    </li>
 		         	 </ul>
 	          	</div>
 	          </div>	
          	 <!-- 체험 지도 -->  
-			 <div style="/* border: 0.1rem solid black; */ width: 70rem; margin-top: 3rem; margin-bottom: 5rem;">  
+			 <div id="mapAll">  
 	      		<div style="width:15rem; height:30rem; line-height:30rem; float: left; font-size: 1.5rem; font-weight: bold;">체험장소</div>
 	      			
-		        <div id="exMap" style="width: 40rem;height: 30rem; margin-left: 15rem;"></div>
+		        <div id="exMap"></div>
 						
 				<script>
 					var container = document.getElementById('exMap');
